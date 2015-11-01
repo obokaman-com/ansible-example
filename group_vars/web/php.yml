@@ -1,0 +1,26 @@
+php_enablerepo: "remi,remi-php56"
+
+php_memory_limit: "256M"
+php_max_execution_time: "30"
+php_post_max_size: "8M"
+php_upload_max_filesize: "8M"
+php_date_timezone: "Europe/Madrid"
+php_short_open_tag: false
+php_error_reporting: "E_ALL"
+php_display_errors: "Off"
+php_display_startup_errors: "On"
+php_expose_php: "Off"
+
+php_packages:
+  - php
+  - php-cli
+  - php-common
+  - php-devel
+  - php-opcache
+  - php-gd
+  - php-mbstring
+  - php-xml
+  - php-mysqlnd
+  - php-pdo
+  - php-pecl-memcache
+  - php-pecl-mailparse

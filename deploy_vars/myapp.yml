@@ -1,0 +1,7 @@
+ansistrano_deploy_via: git
+ansistrano_git_repo: https://github.com/obokaman-com/albert.garcia.gibert.es.git
+ansistrano_git_branch: "{{ deploy_git_branch }}"
+
+ansistrano_after_symlink_tasks_file: "{{ playbook_dir }}/deploy_tasks/{{ app }}/symlinks.yml"
+#ansistrano_after_update_code_tasks_file: "{{ playbook_dir }}/deploy_tasks/composer_install.yml"
+ansistrano_after_cleanup_tasks_file: "{{ playbook_dir }}/deploy_tasks/reload_apache.yml"

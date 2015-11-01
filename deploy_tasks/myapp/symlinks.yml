@@ -1,0 +1,2 @@
+- name: Create symlink to myapp documentroot from deploy current release
+  file: src=/var/www/deploy/production/myapp/current dest=/var/www/myapp state=link

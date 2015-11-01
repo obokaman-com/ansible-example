@@ -1,0 +1,2 @@
+- name: Composer install to get all app dependencies
+  composer: command=install working_dir={{ ansistrano_release_path.stdout }}

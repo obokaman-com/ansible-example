@@ -1,0 +1,13 @@
+[web]
+web.test-production.server
+
+[db]
+database.test-production.server
+
+[app:children]
+web
+db
+
+[app:vars]
+deploy_environment=production
+deploy_git_branch=master

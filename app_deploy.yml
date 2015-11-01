@@ -1,0 +1,14 @@
+---
+- name: Deploy {{ app }}
+  hosts: web
+  remote_user: root
+
+  vars_files:
+    - ./deploy_vars/{{ app }}.yml
+
+  roles:
+    - {
+      role: carlosbuenosvinos.ansistrano-deploy,
+      ansistrano_deploy_to: "/var/www/deploy/{{ deploy_environment }}/{{ app }}",
+      ansistrano_keep_releases: 3
+     }

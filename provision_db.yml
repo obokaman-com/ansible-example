@@ -1,0 +1,8 @@
+---
+- name: Install MySQL
+  hosts: db
+  remote_user: root
+
+  roles:
+    - common_packages
+    - { role: geerlingguy.mysql }

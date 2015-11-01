@@ -1,0 +1,11 @@
+---
+- name: Install Apache, PHP (5.6) & Memcached
+  hosts: web
+  remote_user: root
+
+  roles:
+    - common_packages
+    - { role: geerlingguy.apache }
+    - { role: geerlingguy.php }
+    - { role: geerlingguy.composer }
+    - { role: geerlingguy.memcached }

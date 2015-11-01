@@ -1,0 +1,13 @@
+[web]
+web.test-development.server
+
+[db]
+database.test-development.server
+
+[app:children]
+web
+db
+
+[app:vars]
+deploy_environment=development
+deploy_git_branch=devel

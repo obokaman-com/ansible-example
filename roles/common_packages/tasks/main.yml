@@ -1,0 +1,25 @@
+---
+- name: Install Epel Repo
+  yum: name=epel-release state=present
+
+- name: Install remi repo.
+  yum:
+    name: "http://rpms.famillecollet.com/enterprise/remi-release-{{ ansible_distribution_major_version }}.rpm"
+    state: present
+
+- name: Import remi GPG key.
+  rpm_key:
+    key: "http://rpms.remirepo.net/RPM-GPG-KEY-remi"
+    state: present
+
+- name: Install multiple packages (vim-enhanced,telnet,zip,unzip,screen,git,sendmail)
+  yum: name={{item}} state=installed
+  with_items:
+    - vim-enhanced
+    - telnet
+    - zip
+    - unzip
+    - screen
+    - git
+    - sendmail
+    - cronolog

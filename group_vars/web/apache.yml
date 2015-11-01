@@ -1,0 +1,11 @@
+apache_enable_repo: "remi"
+apache_vhosts:
+  - servername: "albert.garcia.gibert.es"
+    serveralias: gibert.es *.gibert.es
+    serveradmin: albert.garcia@gibert.es,
+    documentroot: "/var/www/myapp"
+    extra_parameters: |
+        RewriteEngine On
+        RewriteCond %{HTTP_HOST} !^albert.garcia.gibert.es
+        RewriteRule .* http://albert.garcia.gibert.es/ [QSA,L]
+        CustomLog "|/usr/sbin/cronolog /var/log/httpd/%Y/gibert.%Y.%m.log" combined
